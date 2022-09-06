@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Flow</title>
+</head>
+<body>
+    <p>Enter a number and click OK:</p>
+
+    <input type="number" min="100" id="id1">
+    <button class="btn">OK</button>
+
+    <p class="demo"></p>
+
+    <script>
+        const btn =  document.querySelector('.btn');
+        btn.onclick = function(){
+            let txt = '';
+            
+            if (document.getElementById('id1').validity.rangeUnderflow) {
+                txt = 'Value too small';
+            }else{
+                txt = 'Input OK';
+            }
+
+            document.querySelector('.demo').innerHTML = txt;
+        }
+    </script>
+    
+</body>
+</html>

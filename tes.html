@@ -1,0 +1,87 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <p id="counter"></p>
+        <table border="1" cellspacing = 0;>
+            <tr>
+                <th>nama</th>
+                <th>nim</th>
+                <th>aksi</th>
+            </tr>
+            <tbody id="dt_mahasiswa">
+
+            </tbody>
+        </table>
+
+
+        <script>
+          
+          let appData  = new function () {
+
+          
+          this.mahasiswa = [
+                {nama: 'gesang',
+                nim: '18532959'
+              
+                },
+                {
+                    nama: 'novangga',
+                    nim : '18532981'
+                }
+            ];
+
+            //   this.Count = function (data){
+            //   let el = document.getElementById('counter');
+            //   if (data) {
+            //   if(data > 1){
+            //   el.innerHTML = '';
+            //   }
+
+            //   }
+            //   };
+
+            let tabel = document.querySelector('#dt_mahasiswa');
+            
+            this.mahasiswa.forEach((d) =>{
+                tabel.innerHTML += '<tr>';
+                tabel.innerHTML += `<td> ${d.nama}</td>`;
+                tabel.innerHTML += `<td> ${d.nim}</td>`;
+                tabel.innerHTML += '</tr>';
+
+            
+            });
+
+        //     this.fecthArray =  function() {
+        //         let data = '';
+        //    for (let i = 0; i < this.mahasiswa.length; i++) {
+        //             for(let key in this.mahasiswa[i]){
+        //                  tabel.innerHTML += '<tr>';
+        //          tabel.innerHTML += `<td> ${d.nama}</td>`;
+        //          tabel.innerHTML += `<td> ${d.nim}</td>`;
+        //          tabel.innerHTML += '</tr>';
+                        
+        //             }
+                    
+        //         }
+        //     }
+        //     this.Count(this.mahasiswa.length);
+        //     return this.tabel.innerHTML = data;
+
+            
+        }
+        
+    
+        
+
+        </script>
+        
+    </body>
+    </html>
+

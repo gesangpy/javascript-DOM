@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <fieldset>
+        <legend>Input Form</legend>
+        <input type="text" name="barang" placeholder="input nama barang...">
+        <input type="button" onclick="addBarang()" value="Tambah">
+    </fieldset>
+
+    <div>
+        <ul id="list-barang">
+
+        </ul>
+    </div>
+   
+    <script>
+       let dataBarang = [
+        "Buku Tuis",
+        "Pensil",
+        "Spidol"
+       ];
+
+        function showBarang() {
+           let listBarang =   document.getElementById('list-barang');
+        //    clear list barang
+        listBarang.innerHTML= '';
+
+        // cetak semua barang
+        for(let i=0; i < dataBarang.length; i++){
+            let btnEdit = "<a hre='#'  onclick='editBarang("+ i +")'>Edit</a>";
+            let btnDelete = "<a hre='#' onclick='deleteBarang("+ i +")'>Hapus</a>";
+            
+            listBarang.innerHTML += "<li>" + dataBarang[i] + " [" + btnEdit + " |   " + btnDelete + "]</li>";
+        }
+     }
+   
+
+        function  addBarang(){
+            let input =  document.querySelector("input[name=barang]");
+            dataBarang.push(input.value);
+            showBarang();
+        }
+        function editBarang(id){
+            let newBarang =  prompt("Nama Baru", dataBarang[id]);
+            dataBarang[id] = newBarang;
+            showBarang();
+        }
+
+        function deleteBarang(id){
+            dataBarang.splice(id, 1);
+            showBarang();
+        }
+
+         
+
+
+
+       showBarang();
+       
+    </script>
+</body>
+</html>

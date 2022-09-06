@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD JavaScript</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <table>
+            <tr>
+                <th>Nama</th>
+            </tr>
+            <tbody id="countries"></tbody>
+        </table>
+
+    </div>
+<script>
+    const app = new function(){
+        this.el = document.getElementById('countries');
+        this.contries = ['madiun','ponorogo', 'ngawi'];
+
+        this.count = function(data) {
+            const el = document.getElementById('counter');
+            const name = 'country';
+
+            if (data) {
+                if (data > 1) {
+                    name = 'countries';
+                    
+                }
+                el.innerHTML = data + '' + name;                
+            }else{
+                el.innerHTML = 'No ' + name;
+            }
+        };
+
+        this.FetchAll = function() {
+            const data =  '';
+
+            if (this.contries.length > 0) {
+                for (i = 0; i < this.contries.length; i++){
+                    data += '<tr>';
+                    data += '<td>' + this.contries[i] + '</td>';
+                    data += '</tr>';
+                }
+                
+            }
+            this.Count(this.contries.length);
+            return this.el.innerHTML = data;
+        }
+
+    }
+
+    
+    
+
+    
+
+    
+</script>
+</body>
+</html>

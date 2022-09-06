@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <p>please input number a between 1 and 10:</p>
+
+    <input type="number" id="numb">
+
+    <button class="btn" type="button" onclick="myFuction()">submit</button>
+
+    <p id="demo"></p>
+   <script>
+       const btn = document.querySelector('btn');
+
+    //    btn.onclick = function(){
+    //        let x , text;
+
+    //        x = document.getElementById('numb').value;
+
+    //        if (isNaN(x) || x < 1 || x > 10) {
+    //            text ='input not valid';
+    //        }else{
+    //            text = 'input Ok';
+    //        }
+
+    //        document.getElementById('demo').innerHTML = text;
+    //    }
+
+    function myFuction() {
+        var x, text;
+
+        x = document.getElementById('numb').value;
+
+        if (isNaN(x) || x < 1 || x > 10) {
+            text = 'input not valid'
+        }else{
+            text = 'input OK';
+        }
+
+        document.getElementById('demo').innerHTML = text;
+    }
+
+       
+   </script> 
+    
+</body>
+</html>
